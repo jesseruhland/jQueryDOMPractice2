@@ -7,12 +7,13 @@ $('#submitbttn').on('click', function(event) {
     } else if (movie.length < 2) {
         alert('Please enter a movie title with at least 2 characters.')
     } else {
-        $('ul').append('<li>'+movie+' | '+rating+' <button>Remove</button></li>');
+        $('tbody').append('<tr><td>'+movie+'</td><td>'+rating+'</td><td><button>Remove</button></td></tr>');
         $('#movieinput').val('');
         $('#ratinginput').val('');
     }
 })
 
-$('ul').on('click', 'button', function(event) {
-    $(this).parent().remove();
+$('table').on('click', 'button', function(event) {
+    $(this).parent().parent().remove();
 });
+
